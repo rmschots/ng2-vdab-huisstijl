@@ -1,0 +1,21 @@
+<div [formGroup]="formGroup">
+  <div class="form-row">
+    <div class="form-label">
+      <label for="{{formFieldReference}}">{{formFieldLabel}}</label>
+    </div>
+    <div class="form-field" [ngClass]="{'field-error': formError}">
+      <textarea name="{{formFieldReference}}"
+                id="{{formFieldReference}}"
+                placeholder="{{formFieldPlaceholder}}"
+                rows="8"
+                formControlName="{{formFieldReference}}" #textareaTemplateRef>
+      </textarea>
+      <div class="textarea-meta" id="textarea{{formFieldReference}}counter">
+        {{textareaTemplateRef.value.length}}/{{formFieldMaxLength}} <div *ngIf="formFieldOptional" class="textarea-optional">(optioneel)</div>
+      </div>
+      <div *ngIf="formError" class="field-error-message" id="textarea{{formFieldReference}}error" >
+        {{ formError }}
+      </div>
+    </div>
+  </div>
+</div>

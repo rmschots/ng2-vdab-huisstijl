@@ -1,0 +1,17 @@
+  <div class="form-row" [formGroup]="formGroup">
+    <div class="form-label">
+      <label for="{{formFieldReference}}">{{formFieldLabel}}</label>
+    </div>
+    <div class="form-field" [ngClass]="{'field-error': formError}">
+      <input name="{{formFieldReference}}"
+             id="{{formFieldReference}}"
+             placeholder="{{formFieldPlaceholder}}"
+             formControlName="{{formFieldReference}}"
+             type="{{formFieldInputType}}">
+      <div class="field-error-message" *ngIf="formError">
+        {{ formError }}
+      </div>
+      <div *ngIf="formFieldOptional" class="optional">(optioneel)</div>
+    </div>
+
+  </div>
