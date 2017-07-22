@@ -1,12 +1,16 @@
 {
   "name": "ng2-vdab-huisstijl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "bundles/vdabhuisstijl.umd.js",
   "module": "index.js",
   "typings": "index.d.ts",
-  "author": "",
+  "author": "Roel Mangelschots",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmschots/ng2-vdab-huisstijl.git"
+  },
   "scripts": {
     "remove-folders": "rimraf dist && rimraf tmp",
     "inline": "ng2inline -o tmp -c true \"lib/**/*.ts\"",
