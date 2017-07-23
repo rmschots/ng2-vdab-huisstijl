@@ -1,0 +1,66 @@
+<div class="block-display">
+
+  <div class="block-display-head">
+    <h2 id="pagina-titel">Formulier header titel</h2>
+  </div>
+
+  <div class="block-display-form">
+    <form [formGroup]="dummyForm" class="form-container">
+      <div class="form-section">
+
+        <div class="form-row row-title">
+          <h2>Formulier titel</h2>
+        </div>
+
+        <vdab-form-inputfield
+            [formGroup]="dummyForm"
+            [formFieldLabel]="'Dummy label 1'"
+            [formFieldPlaceholder]="'placeholder 1'"
+            [formFieldOptional]="true"
+            [formFieldReference]="'field1'"
+            [formValidation]="{'required' : 'Dummy label 1 is verplicht.'}">
+        </vdab-form-inputfield>
+
+        <vdab-form-inputfield
+            [formGroup]="dummyForm"
+            [formFieldLabel]="'Dummy label 2'"
+            [formFieldPlaceholder]="'placeholder 2'"
+            [formFieldReference]="'field2'"
+            [formValidation]="{'required' : 'Dummy label 2 is verplicht.', 'minlength' : 'Dummy label 2 moet minstens lengte 3 hebben.'}">
+        </vdab-form-inputfield>
+
+        <vdab-form-dropdown
+            [formGroup]="dummyForm"
+            [formFieldLabel]="'Dummy label 3'"
+            [formFieldPlaceholder]="'placeholder 3'"
+            [formFieldReference]="'field3'"
+            [formValidation]="{'required' : 'Dummy label 3 is verplicht.'}"
+            [dropdownOptions]="dummyOptions">
+        </vdab-form-dropdown>
+
+        <vdab-form-textarea
+            [formGroup]="dummyForm"
+            [formFieldLabel]="'Dummy label 4'"
+            [formFieldPlaceholder]="'placeholder 4'"
+            [formFieldReference]="'field4'"
+            [formFieldMaxLength]="maxLength"
+            [formValidation]="{'required' : 'Dummy label 4 is verplicht.', 'maxlength' : 'Dummy label 4 mag hoogstens '+maxLength+' karakters hebben.'}">
+        </vdab-form-textarea>
+
+        <div class="form-footer">
+          <div class="form-buttons">
+            <button
+                [disabled]="!dummyForm.valid"
+                (onClick)="bewaar()">
+              Bewaar
+            </button>
+            <button type="reset" class="ghost" (click)="annuleer()">Annuleer</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+    <div class="block-display-meta">
+    </div>
+  </div>
+</div>

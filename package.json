@@ -1,6 +1,6 @@
 {
   "name": "ng2-vdab-huisstijl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "bundles/vdabhuisstijl.umd.js",
   "module": "index.js",
@@ -18,7 +18,9 @@
     "package": "rollup -c",
     "minify": "uglifyjs dist/bundles/vdabhuisstijl.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/vdabhuisstijl.umd.min.js",
     "build": "npm run remove-folders && npm run inline && npm run transpile && npm run package && npm run minify && node tools/copy-package.js",
-    "publish": "cd dist && npm publish"
+    "publish": "cd dist && npm publish",
+    "move-lib-to-demo": "cpx \"lib/**/*\" demo/src/app/lib -w",
+    "serve-demo": "cd demo && ng serve"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.0",
@@ -48,6 +50,7 @@
     "chai": "^3.5.0",
     "codelyzer": "^2.0.0-beta.4",
     "core-js": "^2.4.1",
+    "cpx": "^1.5.0",
     "mocha": "^3.2.0",
     "rimraf": "^2.5.4",
     "systemjs": "0.19.28",
